@@ -17,7 +17,13 @@ public class BaseTest {
     public MenuSteps menuSteps;
     public FilterSteps filterSteps;
 
+    public static String baseUrl = "https://www.e-katalog.ru/";
 
+    public static String getUrl(){
+        if (System.getProperty("url") != null) {
+            return System.getProperty("url");
+        }else return baseUrl;
+    }
 
     @BeforeMethod
     public void setUp(){
@@ -25,18 +31,13 @@ public class BaseTest {
         filterSteps = new FilterSteps();
         Configuration.startMaximized = true;
         Configuration.timeout = 10000;
-        open("https://www.e-katalog.ru/");
+        open(baseUrl);
     }
 
 
     @AfterMethod
     public void close(){
         WebDriverRunner.getWebDriver().close();
-        if(WebDriverRunner.hasWebDriverStarted()){
-            WebDriverRunner.getWebDriver().close();
-            WebDriverRunner.getWebDriver().quit();
-
-        }
         Selenide.close();
     }
 }

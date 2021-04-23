@@ -10,12 +10,25 @@ allure {
     aspectjweaver = true
 
 }
+
+test.doFirst {
+    jvmArgs "-Durl=" + System.getProperty('url')
+    def groups = System.getProperty('groups')
+}
 group 'org.example'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
     jcenter()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+tasks.withType(Test).configureEach(){
+    maxParallelForks = 2
 }
 
 dependencies {

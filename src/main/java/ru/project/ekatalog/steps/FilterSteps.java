@@ -2,8 +2,8 @@ package ru.project.ekatalog.steps;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import ru.project.ekatalog.page.CheckBox;
-import ru.project.ekatalog.page.TextFieldPage;
+import ru.project.ekatalog.page.elements.CheckBox;
+import ru.project.ekatalog.page.elements.TextFieldPage;
 
 public class FilterSteps {
 

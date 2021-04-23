@@ -1,4 +1,4 @@
-package ru.project.ekatalog.page;
+package ru.project.ekatalog.page.elements;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;

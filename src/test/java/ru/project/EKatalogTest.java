@@ -4,8 +4,11 @@ package ru.project;
 import org.testng.annotations.Test;
 import ru.project.ekatalog.base.BaseTest;
 
+import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.$$x;
+
 public class EKatalogTest extends BaseTest {
-    @Test
+    @Test(groups = "ekatalog")
     public void eKatalogTest() {
         menuSteps.clickMenuItem("Компьютеры")
                 .clickMenuItem("Мониторы");
@@ -15,5 +18,12 @@ public class EKatalogTest extends BaseTest {
                 .chooseManufacturerCheckBox("Asus")
                 .chooseManufacturerCheckBox("MSI")
                 .chooseManufacturerCheckBox("Xiaomi")
-                .chooseCheckBox("игровой монитор");    }
+                .chooseCheckBox("игровой монитор")
+                .chooseCheckBox("31 – 32\"")
+                .chooseCheckBox("33 – 34\"")
+                .chooseCheckBox("144 Гц")
+                .chooseCheckBox("120 Гц")
+                .chooseCheckBox("изогнутый экран");
+
+    }
 }
