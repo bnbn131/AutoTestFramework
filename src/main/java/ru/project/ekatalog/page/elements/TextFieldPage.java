@@ -12,4 +12,6 @@ public interface TextFieldPage {
      static ElementsCollection field(String nameField){
          return  $$x("//*[text() = '"+nameField+"']/parent::*//input[@type = 'text']");
      }
+
+
 }
