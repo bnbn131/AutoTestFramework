@@ -27,18 +27,18 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(Test).configureEach(){
-    maxParallelForks = 2
+tasks.withType(Test).configureEach() {
+    maxParallelForks = 7
 }
 
 dependencies {
-// https://mvnrepository.com/artifact/org.testng/testng
-     implementation group: 'org.testng', name: 'testng', version: '7.4.0'
-    // https://mvnrepository.com/artifact/com.codeborne/selenide
+
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '4.3.3'
+
+    implementation group: 'org.testng', name: 'testng', version: '7.4.0'
     implementation group: 'com.codeborne', name: 'selenide', version: '5.20.3'
-    // https://mvnrepository.com/artifact/io.qameta.atlas/atlas-webdriver
     implementation group: 'io.qameta.atlas', name: 'atlas-webdriver', version: '1.8.0'
-    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+
     implementation group: 'io.qameta.allure', name: 'allure-testng', version: '2.13.9'
 }
 
